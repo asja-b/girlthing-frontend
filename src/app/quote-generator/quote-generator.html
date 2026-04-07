@@ -1,0 +1,47 @@
+<div class="container">
+  <h1>Random Quote Generator</h1>
+
+  <div class="categories">
+    @for (cat of categories; track cat) {
+      <label>
+        <input
+          type="radio"
+          name="category"
+          [value]="cat"
+          [(ngModel)]="selectedCategory">
+        {{ cat }}
+      </label>
+    }
+  </div>
+
+  <button (click)="getRandomQuote()">Generate Quote</button>
+
+  @if (currentQuote) {
+    <div class="quote-box">
+      <p class="quote-text">"{{ currentQuote.text }}"</p>
+      <p class="quote-author">- {{ currentQuote.author }}</p>
+      <label>
+        <input
+          type="checkbox"
+          [checked]="currentQuote.isFavorite"
+          (change)="currentQuote.isFavorite = !currentQuote.isFavorite">
+        Add to Favorites
+      </label>
+    </div>
+  }
+
+  <div class="stats-section">
+    <button (click)="showStats = !showStats">
+      {{ showStats ? 'Hide Stats' : 'Show Stats' }}
+    </button>
+
+    @if (showStats) {
+      <div class="stats">
+        <h3>Favorites per category:</h3>
+        @for (cat of categories; track cat) {
+          <p>{{ cat }}: {{ getFavoritesCount(cat) }} </p>
+        }
+      </div>
+    }
+  </div>
+</div>
