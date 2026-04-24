@@ -8,7 +8,7 @@ Built with Angular CLI version 21.2.5.
 
 ## Projects
 
-### R3 — Random Quote Generator
+### R3 - Random Quote Generator
 
 - Select a quote category using radio buttons — **funny**, **love** or **motivational**
 - Click the button to generate a random quote from the selected category
@@ -17,6 +17,20 @@ Built with Angular CLI version 21.2.5.
 - Hide or show the statistics section with a toggle button
 
 **Key concepts practiced:** data binding, event binding, two-way binding, `@if`, `@for`, TypeScript interfaces, SCSS
+
+---
+
+### Task Manager - Assignment 01
+
+A task management app built with Angular and Bootstrap.
+
+- View tasks displayed as cards with title, project name, due date and status
+- Filter tasks by name using a search input
+- Filter tasks by status using a select box - both filters work simultaneously
+- Change task status directly on each card
+- Status badge changes colour based on status - grey for To Do, pink for In Progress, green for Done
+
+**Key concepts practiced:** @Input, @Output, EventEmitter, parent-child communication, getters, TypeScript interfaces, Bootstrap
 
 ---
 
@@ -59,5 +73,5 @@ This will compile your project and store the build artifacts in the `dist/` dire
 For more information on using the Angular CLI visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 
 ---
-
+*Updated as I progress through the course* 🚀
 *Updated as I progress through the course* 🚀
