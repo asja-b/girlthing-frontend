@@ -10,7 +10,7 @@ Built with Angular CLI version 21.2.5.
 
 ### R3 - Random Quote Generator
 
-- Select a quote category using radio buttons — **funny**, **love** or **motivational**
+- Select a quote category using radio buttons - **funny**, **love** or **motivational**
 - Click the button to generate a random quote from the selected category
 - Mark any quote as a favourite using a checkbox
 - View a statistics section showing how many favourites each category has
