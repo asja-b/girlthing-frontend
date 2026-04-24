@@ -74,4 +74,3 @@ For more information on using the Angular CLI visit the [Angular CLI Overview an
 
 ---
 *Updated as I progress through the course* 🚀
-*Updated as I progress through the course* 🚀
