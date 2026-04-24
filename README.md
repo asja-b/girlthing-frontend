@@ -1,4 +1,4 @@
-# Girlthing Frontend 🌸
+# GirlTHing Frontend 🌸
 
 Assignments and projects built as part of the **GirlTHing Full Stack program.**
 
