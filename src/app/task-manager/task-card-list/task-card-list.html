@@ -1,0 +1,33 @@
+<div class="container my-5">
+  <h2 class="mb-4">Task Manager</h2>
+
+  <div class="d-flex gap-3 mb-4">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search by task name..."
+      [(ngModel)]="searchText">
+
+    <select class="form-select" [(ngModel)]="selectedStatus">
+      <option value="">All statuses</option>
+      <option value="To Do">To Do</option>
+      <option value="In Progress">In Progress</option>
+      <option value="Done">Done</option>
+    </select>
+  </div>
+
+  <div class="row g-3">
+    @for (task of filteredTasks; track task.id) {
+      <div class="col-md-4">
+        <app-task-card
+          [task]="task"
+          (statusChanged)="onStatusChanged($any($event))">
+        </app-task-card>
+      </div>
+    }
+
+    @if (filteredTasks.length === 0) {
+      <p class="text-muted">No tasks found.</p>
+    }
+  </div>
+</div>

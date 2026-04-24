@@ -1,0 +1,7 @@
+@if (status === 'To Do') {
+  <span class="badge bg-secondary">{{ status }}</span>
+} @else if (status === 'In Progress') {
+  <span class="badge bg-primary">{{ status }}</span>
+} @else if (status === 'Done') {
+  <span class="badge bg-success">{{ status }}</span>
+}

@@ -1,0 +1,13 @@
+h2 {
+  color: #ff8fa3;
+  font-weight: bold;
+}
+
+.form-control, .form-select {
+  border-color: #ffb6c1;
+  
+  &:focus {
+    border-color: #ff8fa3;
+    box-shadow: 0 0 0 0.2rem rgba(255, 143, 163, 0.25);
+  }
+}

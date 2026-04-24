@@ -1,0 +1,24 @@
+.card {
+  border: 1px solid #ffb6c1;
+  border-radius: 16px;
+  background-color: #fff;
+
+  &:hover {
+    box-shadow: 0 4px 15px rgba(255, 182, 193, 0.5);
+    transition: box-shadow 0.3s;
+  }
+}
+
+.card-title {
+  color: #333;
+  font-weight: bold;
+}
+
+.form-select {
+  border-color: #ffb6c1;
+  
+  &:focus {
+    border-color: #ff8fa3;
+    box-shadow: 0 0 0 0.2rem rgba(255, 143, 163, 0.25);
+  }
+}
