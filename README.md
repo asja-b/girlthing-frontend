@@ -1,4 +1,4 @@
-# GirlTHing Frontend 🌸
+# Girlthing Frontend 🌸
 
 Assignments and projects built as part of the **GirlTHing Full Stack program.**
 
@@ -31,6 +31,20 @@ A task management app built with Angular and Bootstrap.
 - Status badge changes colour based on status - grey for To Do, pink for In Progress, green for Done
 
 **Key concepts practiced:** @Input, @Output, EventEmitter, parent-child communication, getters, TypeScript interfaces, Bootstrap
+
+---
+
+### Task Manager - Assignment 02
+
+Expanded the Task Manager app with two new table components.
+
+- View all users in a table with name, email, role and password columns
+- View all tasks in a table with title, project, assigned user, status, due date columns
+- Status is displayed using the reusable StatusBadge component from Assignment 01
+- Assigned user name is resolved from user ID using a lookup method
+- Add new user and Add new task buttons prepared for future functionality
+
+**Key concepts practiced:** reusing components across the app, resolving related data between two arrays, Bootstrap tables
 
 ---
 
@@ -73,4 +87,5 @@ This will compile your project and store the build artifacts in the `dist/` dire
 For more information on using the Angular CLI visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 
 ---
+
 *Updated as I progress through the course* 🚀
