@@ -15,7 +15,7 @@
       </tr>
     </thead>
     <tbody>
-      @for (user of users; track user.id) {
+      @for (user of userService.users; track user.id) {
         <tr>
           <td>{{ user.name }}</td>
           <td>{{ user.email }}</td>
@@ -23,7 +23,7 @@
           <td>{{ user.password }}</td>
           <td>
             <button class="btn btn-sm btn-outline-secondary me-2">Edit</button>
-            <button class="btn btn-sm btn-outline-danger">Delete</button>
+            <button class="btn btn-sm btn-outline-danger" (click)="onDeleteUser(user.id)">Delete</button>
           </td>
         </tr>
       }

@@ -16,7 +16,7 @@
       </tr>
     </thead>
     <tbody>
-      @for (task of tasks; track task.id) {
+      @for (task of taskService.tasks; track task.id) {
         <tr>
           <td>{{ task.title }}</td>
           <td>{{ task.projectName }}</td>
@@ -25,7 +25,7 @@
           <td>{{ task.dueDate }}</td>
           <td>
             <button class="btn btn-sm btn-outline-secondary me-2">Edit</button>
-            <button class="btn btn-sm btn-outline-danger">Delete</button>
+            <button class="btn btn-sm btn-outline-danger" (click)="onDeleteTask(task.id)">Delete</button>
           </td>
         </tr>
       }

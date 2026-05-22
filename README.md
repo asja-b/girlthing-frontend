@@ -8,9 +8,9 @@ Built with Angular CLI version 21.2.5.
 
 ## Projects
 
-### R3 - Random Quote Generator
+### R3 — Random Quote Generator
 
-- Select a quote category using radio buttons - **funny**, **love** or **motivational**
+- Select a quote category using radio buttons — **funny**, **love** or **motivational**
 - Click the button to generate a random quote from the selected category
 - Mark any quote as a favourite using a checkbox
 - View a statistics section showing how many favourites each category has
@@ -20,21 +20,21 @@ Built with Angular CLI version 21.2.5.
 
 ---
 
-### Task Manager - Assignment 01
+### Task Manager — Assignment 01
 
 A task management app built with Angular and Bootstrap.
 
 - View tasks displayed as cards with title, project name, due date and status
 - Filter tasks by name using a search input
-- Filter tasks by status using a select box - both filters work simultaneously
+- Filter tasks by status using a select box — both filters work simultaneously
 - Change task status directly on each card
-- Status badge changes colour based on status - grey for To Do, pink for In Progress, green for Done
+- Status badge changes colour based on status — grey for To Do, pink for In Progress, green for Done
 
 **Key concepts practiced:** @Input, @Output, EventEmitter, parent-child communication, getters, TypeScript interfaces, Bootstrap
 
 ---
 
-### Task Manager - Assignment 02
+### Task Manager — Assignment 02
 
 Expanded the Task Manager app with two new table components.
 
@@ -45,6 +45,20 @@ Expanded the Task Manager app with two new table components.
 - Add new user and Add new task buttons prepared for future functionality
 
 **Key concepts practiced:** reusing components across the app, resolving related data between two arrays, Bootstrap tables
+
+---
+
+### Task Manager — Assignment 03
+
+Connected the Task Manager app to a real backend using mockAPI.io.
+
+- Replaced all hardcoded data with real data fetched from mockAPI.io
+- Delete task functionality sends a real HTTP DELETE request to the backend
+- Delete user functionality sends a real HTTP DELETE request to the backend
+- Status change on task card sends a real HTTP PUT request to the backend
+- Shared ITask and IUser interfaces extracted into separate files
+
+**Key concepts practiced:** HTTP requests, HttpClient, Observable, subscribe, REST API, Angular services, dependency injection, mockAPI.io
 
 ---
 
