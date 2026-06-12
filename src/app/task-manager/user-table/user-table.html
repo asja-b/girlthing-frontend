@@ -1,7 +1,7 @@
 <div class="container my-5">
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h2>Users</h2>
-    <button class="btn btn-pink">Add new user</button>
+    <button class="btn btn-pink" (click)="onAddNew()">Add new user</button>
   </div>
 
   <table class="table table-bordered table-hover">
@@ -22,11 +22,19 @@
           <td>{{ user.role }}</td>
           <td>{{ user.password }}</td>
           <td>
-            <button class="btn btn-sm btn-outline-secondary me-2">Edit</button>
-            <button class="btn btn-sm btn-outline-danger" (click)="onDeleteUser(user.id)">Delete</button>
+            <button class="btn btn-sm btn-outline-secondary me-2" (click)="onEdit(user.id)">Edit</button>
+            <button class="btn btn-sm btn-outline-danger" (click)="openDeleteDialog(user.id)">Delete</button>
           </td>
         </tr>
       }
     </tbody>
   </table>
 </div>
+
+@if (showDialog) {
+  <app-confirm-dialog
+    message="Are you sure you want to delete this user?"
+    (confirm)="confirmDelete()"
+    (cancel)="cancelDelete()">
+  </app-confirm-dialog>
+}

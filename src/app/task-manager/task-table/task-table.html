@@ -1,7 +1,7 @@
 <div class="container my-5">
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h2>Tasks</h2>
-    <button class="btn btn-pink">Add new task</button>
+    <button class="btn btn-pink" (click)="onAddNew()">Add new task</button>
   </div>
 
   <table class="table table-bordered table-hover">
@@ -24,11 +24,19 @@
           <td><app-status-badge [status]="task.status"></app-status-badge></td>
           <td>{{ task.dueDate }}</td>
           <td>
-            <button class="btn btn-sm btn-outline-secondary me-2">Edit</button>
-            <button class="btn btn-sm btn-outline-danger" (click)="onDeleteTask(task.id)">Delete</button>
+            <button class="btn btn-sm btn-outline-secondary me-2" (click)="onEdit(task.id)">Edit</button>
+            <button class="btn btn-sm btn-outline-danger" (click)="openDeleteDialog(task.id)">Delete</button>
           </td>
         </tr>
       }
     </tbody>
   </table>
 </div>
+
+@if (showDialog) {
+  <app-confirm-dialog
+    message="Are you sure you want to delete this task?"
+    (confirm)="confirmDelete()"
+    (cancel)="cancelDelete()">
+  </app-confirm-dialog>
+}

@@ -1,15 +1,25 @@
 import { Component } from '@angular/core';
-import { QuoteGenerator } from './quote-generator/quote-generator';
-import { TaskCardList } from './task-manager/task-card-list/task-card-list';
-import { UserTable } from './task-manager/user-table/user-table';
-import { TaskTable } from './task-manager/task-table/task-table';
+import { CommonModule } from '@angular/common';
+import { RouterOutlet, Router, NavigationEnd } from '@angular/router';
+import { Navbar } from './task-manager/navbar/navbar';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
-  imports: [QuoteGenerator, TaskCardList,UserTable, TaskTable],
+  standalone: true,
+  imports: [CommonModule, RouterOutlet, Navbar],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
- 
+
+  showNavbar = true;
+
+  constructor(private router: Router) {
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: any) => {
+      this.showNavbar = !event.url.includes('/login');
+    });
+  }
 }

@@ -1,0 +1,32 @@
+<div class="container my-5">
+  <h1 class="mb-4">Welcome back, {{ currentUser?.name }}!</h1>
+
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm border-secondary">
+        <div class="card-body">
+          <h5 class="card-title text-muted">To Do</h5>
+          <p class="display-4 fw-bold">{{ countByStatus('To Do') }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm" style="border-color: #ffb6c1;">
+        <div class="card-body">
+          <h5 class="card-title" style="color: #ff8fa3;">In Progress</h5>
+          <p class="display-4 fw-bold">{{ countByStatus('In Progress') }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card text-center shadow-sm border-success">
+        <div class="card-body">
+          <h5 class="card-title text-success">Done</h5>
+          <p class="display-4 fw-bold">{{ countByStatus('Done') }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

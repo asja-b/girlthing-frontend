@@ -1,0 +1,80 @@
+<div class="container my-5">
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h2 class="mb-4">{{ editId ? 'Edit user' : 'Add new user' }}</h2>
+
+      <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input
+            id="name"
+            type="text"
+            class="form-control"
+            formControlName="name"
+            [class.is-invalid]="name?.invalid && name?.touched">
+          @if (name?.invalid && name?.touched) {
+            <div class="invalid-feedback">Name is required.</div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            id="email"
+            type="email"
+            class="form-control"
+            formControlName="email"
+             autocomplete="off"
+            [class.is-invalid]="email?.invalid && email?.touched">
+          @if (password?.invalid && password?.touched) {
+            <div class="invalid-feedback">
+              @if (email?.errors?.['required']) { Email is required. }
+              @if (email?.errors?.['email']) { Please enter a valid email address. }
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            id="password"
+            type="password"
+            class="form-control"
+            formControlName="password"
+            autocomplete="new-password"
+            [class.is-invalid]="password?.invalid && password?.touched">
+          @if (password?.invalid && password?.touched) {
+            <div class="invalid-feedback">
+              @if (password?.errors?.['required']) { Password is required. }
+              @if (password?.errors?.['minlength']) { Password must be at least 6 characters long. }
+            </div>
+          }
+        </div>
+
+        <div class="mb-3">
+          <label for="role" class="form-label">Role</label>
+          <select
+            id="role"
+            class="form-select"
+            formControlName="role"
+            [class.is-invalid]="role?.invalid && role?.touched">
+            <option value="">Select role...</option>
+            <option value="Admin">Admin</option>
+            <option value="Regular user">Regular user</option>
+          </select>
+          @if (role?.invalid && role?.touched) {
+            <div class="invalid-feedback">Role is required.</div>
+          }
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-pink"
+          [disabled]="userForm.invalid">
+          {{ editId ? 'Save changes' : 'Add user' }}
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

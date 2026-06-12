@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ITask } from './task.interface';
 import { TaskApiService } from './task-api';
 
@@ -15,6 +16,18 @@ export class TaskService {
     this.taskApiService.getAll().subscribe(tasks => {
       this.tasks = tasks;
     });
+  }
+
+  getTaskById(id: string): Observable<ITask> {
+    return this.taskApiService.getById(id);
+  }
+
+  addTask(task: Partial<ITask>): Observable<ITask> {
+    return this.taskApiService.create(task);
+  }
+
+  updateTask(id: string, task: Partial<ITask>): Observable<ITask> {
+    return this.taskApiService.update(id, task);
   }
 
   updateTaskStatus(id: string, newStatus: string): void {

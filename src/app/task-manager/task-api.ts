@@ -16,15 +16,19 @@ export class TaskApiService {
     return this.http.get<ITask[]>(this.apiUrl);
   }
 
+  getById(id: string): Observable<ITask> {
+    return this.http.get<ITask>(`${this.apiUrl}/${id}`);
+  }
+
+  create(task: Partial<ITask>): Observable<ITask> {
+    return this.http.post<ITask>(this.apiUrl, task);
+  }
+
   update(id: string, task: Partial<ITask>): Observable<ITask> {
     return this.http.put<ITask>(`${this.apiUrl}/${id}`, task);
   }
 
   delete(id: string): Observable<ITask> {
     return this.http.delete<ITask>(`${this.apiUrl}/${id}`);
-  }
-
-  create(task: Partial<ITask>): Observable<ITask> {
-    return this.http.post<ITask>(this.apiUrl, task);
   }
 }

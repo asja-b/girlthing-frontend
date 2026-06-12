@@ -16,15 +16,19 @@ export class UserApiService {
     return this.http.get<IUser[]>(this.apiUrl);
   }
 
+  getById(id: string): Observable<IUser> {
+    return this.http.get<IUser>(`${this.apiUrl}/${id}`);
+  }
+
+  create(user: Partial<IUser>): Observable<IUser> {
+    return this.http.post<IUser>(this.apiUrl, user);
+  }
+
   update(id: string, user: Partial<IUser>): Observable<IUser> {
     return this.http.put<IUser>(`${this.apiUrl}/${id}`, user);
   }
 
   delete(id: string): Observable<IUser> {
     return this.http.delete<IUser>(`${this.apiUrl}/${id}`);
-  }
-
-  create(user: Partial<IUser>): Observable<IUser> {
-    return this.http.post<IUser>(this.apiUrl, user);
   }
 }

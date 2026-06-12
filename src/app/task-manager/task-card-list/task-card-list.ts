@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TaskCard } from '../task-card/task-card';
 import { TaskService } from '../task';
+import { AuthService } from '../auth';
 import { ITask } from '../task.interface';
 
 @Component({
@@ -17,17 +18,23 @@ export class TaskCardList implements OnInit {
   searchText = '';
   selectedStatus = '';
 
-  constructor(public taskService: TaskService) {}
+  constructor(
+    public taskService: TaskService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit() {
     this.taskService.loadTasks();
   }
 
   get filteredTasks(): ITask[] {
+    const currentUser = this.authService.getCurrentUser();
+
     return this.taskService.tasks.filter(task => {
+      const isMyTask = currentUser ? task.assignedTo === currentUser.id : false;
       const matchesSearch = task.title.toLowerCase().includes(this.searchText.toLowerCase());
       const matchesStatus = this.selectedStatus === '' || task.status === this.selectedStatus;
-      return matchesSearch && matchesStatus;
+      return isMyTask && matchesSearch && matchesStatus;
     });
   }
 
